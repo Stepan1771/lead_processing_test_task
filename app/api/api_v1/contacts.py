@@ -4,6 +4,6 @@ from core.config import settings
 
 
 router = APIRouter(
-    prefix=settings.api.v1.wallets,
+    prefix=settings.api.v1.contacts,
     tags=["Contacts"],
 )
