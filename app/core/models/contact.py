@@ -1,8 +1,8 @@
 from sqlalchemy import Integer, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from core.models.mixins.int_id_pk import IntIdPkMixin
-from core.models.base import Base
+from core.models.mixins import IntIdPkMixin
+from core.models import Base
 
 
 class Contact(IntIdPkMixin, Base):

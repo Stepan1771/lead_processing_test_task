@@ -1,7 +1,7 @@
 from sqlalchemy.orm import relationship
 
-from core.models.base import Base
-from core.models.mixins.int_id_pk import IntIdPkMixin
+from core.models.mixins import IntIdPkMixin
+from core.models import Base
 
 
 class Source(IntIdPkMixin, Base):
@@ -9,5 +9,5 @@ class Source(IntIdPkMixin, Base):
 
     operators = relationship(
         "SourceOperator",
-        backref="source",
+        back_populates="source",
     )

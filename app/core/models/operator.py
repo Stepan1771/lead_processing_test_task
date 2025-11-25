@@ -1,8 +1,8 @@
 from sqlalchemy import Boolean, Integer, Index
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from core.models.base import Base
-from core.models.mixins.int_id_pk import IntIdPkMixin
+from core.models.mixins import IntIdPkMixin
+from core.models import Base
 
 
 class Operator(IntIdPkMixin, Base):
@@ -15,13 +15,13 @@ class Operator(IntIdPkMixin, Base):
     )
     limit: Mapped[int] = mapped_column(
         Integer,
-        null=False,
+        nullable=False,
         default=10,
     )
 
     sources = relationship(
         "SourceOperator",
-        backref="operator",
+        back_populates="operator",
     )
 
     __table_args__ = (

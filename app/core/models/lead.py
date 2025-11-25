@@ -1,8 +1,10 @@
-from sqlalchemy import String
-from sqlalchemy.orm import Mapped, mapped_column
+from typing import List
 
-from core.models.base import Base
-from core.models.mixins.int_id_pk import IntIdPkMixin
+from sqlalchemy import String
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+
+from core.models.mixins import IntIdPkMixin
+from core.models import Base
 
 
 class Lead(IntIdPkMixin, Base):
@@ -12,4 +14,9 @@ class Lead(IntIdPkMixin, Base):
         String(12),
         unique=True,
         nullable=False,
+    )
+    contacts = relationship(
+        'Contact',
+        back_populates='lead',
+        cascade='all, delete-orphan'
     )
