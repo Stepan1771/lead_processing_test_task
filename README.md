@@ -18,7 +18,7 @@
  - ```uvicorn main:main_app```
 
 ### Миграции уже накатаны
- - Если потребуется работа с ними ```cd app``:
+ - Если потребуется работа с ними ```cd app```:
    - ```alembic upgrade b47503f77cba``` - initial tables
    - ```alembic upgrade 93eff9737391``` - test data
 
