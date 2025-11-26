@@ -4,7 +4,6 @@ __all__ = (
     "Source",
     "Lead",
     "Contact",
-    "SourceOperator",
 )
 
 
@@ -13,4 +12,3 @@ from .operator import Operator
 from .source import Source
 from .lead import Lead
 from .contact import Contact
-from .source_operator import SourceOperator

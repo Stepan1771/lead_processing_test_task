@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, Integer, Index, String, TEXT
+from sqlalchemy import Boolean, Integer, Index, String, TEXT, JSON
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from core.models.mixins import IntIdPkMixin
@@ -30,7 +30,7 @@ class Operator(IntIdPkMixin, Base):
         default=0,
     )
     competencies: Mapped[dict] = mapped_column(
-        TEXT,
+        JSON,
         nullable=False,
         default=dict,
     )

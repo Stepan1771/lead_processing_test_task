@@ -23,7 +23,7 @@ class Contact(IntIdPkMixin, Base):
     operator_id: Mapped[int] = mapped_column(
         Integer,
         ForeignKey('operators.id'),
-        nullable=False,
+        nullable=True,
         index=True,
     )
     status: Mapped[str] = mapped_column(

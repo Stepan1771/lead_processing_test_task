@@ -20,7 +20,7 @@ class Source(IntIdPkMixin, Base):
         nullable=False,
     )
 
-    operators = relationship(
+    contacts = relationship(
         "Contact",
         back_populates="source",
     )
