@@ -10,13 +10,14 @@ from core.models import Base
 class Lead(IntIdPkMixin, Base):
     __tablename__ = 'leads'
 
-    phone_number: Mapped[str] = mapped_column(
-        String(12),
+    email: Mapped[str] = mapped_column(
+        String(50),
         unique=True,
         nullable=False,
+        index=True,
     )
+
     contacts = relationship(
         'Contact',
         back_populates='lead',
-        cascade='all, delete-orphan'
     )
