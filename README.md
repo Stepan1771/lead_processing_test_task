@@ -17,6 +17,11 @@
 4. Запустите
  - ```uvicorn main:main_app```
 
+### Миграции уже накатаны
+ - Если потребуется работа с ними ```cd app``:
+   - ```alembic upgrade b47503f77cba``` - initial tables
+   - ```alembic upgrade 93eff9737391``` - test data
+
 ### Связь со мной:
 - тг: @BonusYou
 - резюме: https://hh.ru/resume/02efc04aff0f738fe90039ed1f47356d686a63
