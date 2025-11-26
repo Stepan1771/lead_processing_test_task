@@ -63,6 +63,21 @@ class BaseCRUD(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
             raise e
 
 
+    @staticmethod
+    async def update(
+            session: AsyncSession,
+            model_obj: ModelType,
+            update_schema: UpdateSchemaType,
+    ) -> ModelType:
+        update_data = update_schema.model_dump(exclude_unset=True)
+        for field, value in update_data.items():
+            setattr(model_obj, field, value)
+        session.add(model_obj)
+        await session.commit()
+        await session.refresh(model_obj)
+        return model_obj
+
+
     async def delete(
             self,
             session: AsyncSession,
