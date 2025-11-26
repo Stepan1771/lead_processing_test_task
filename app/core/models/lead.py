@@ -1,7 +1,9 @@
-from typing import List
-
 from sqlalchemy import String
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.orm import (
+    Mapped,
+    mapped_column,
+    relationship,
+)
 
 from core.models.mixins import IntIdPkMixin
 from core.models import Base

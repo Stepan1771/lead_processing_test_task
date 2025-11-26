@@ -1,7 +1,8 @@
-from sqlalchemy.ext.asyncio import AsyncSession
-
 from core.models import Lead
-from core.schemas.lead import LeadCreate, LeadUpdate
+from core.schemas.lead import (
+    LeadCreate,
+    LeadUpdate,
+)
 from crud.base import BaseCRUD
 
 

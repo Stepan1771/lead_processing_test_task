@@ -1,4 +1,9 @@
-from typing import Sequence, Generic, TypeVar, Type
+from typing import (
+    Sequence,
+    Generic,
+    TypeVar,
+    Type,
+)
 
 from fastapi import HTTPException
 from starlette import status
@@ -7,6 +12,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from pydantic import BaseModel
+
 
 ModelType = TypeVar("ModelType")
 CreateSchemaType = TypeVar("CreateSchemaType", bound=BaseModel)

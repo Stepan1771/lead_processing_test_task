@@ -1,5 +1,14 @@
-from sqlalchemy import Integer, ForeignKey, String, Boolean
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy import (
+    Integer,
+    ForeignKey,
+    String,
+    Boolean,
+)
+from sqlalchemy.orm import (
+    Mapped,
+    mapped_column,
+    relationship,
+)
 
 from core.models.mixins import IntIdPkMixin
 from core.models import Base

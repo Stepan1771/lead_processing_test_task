@@ -5,7 +5,11 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from core.models import Operator
-from core.schemas.operator import OperatorCreate, OperatorUpdate
+from core.schemas.operator import (
+    OperatorCreate,
+    OperatorUpdate,
+)
+
 from crud.base import BaseCRUD
 
 

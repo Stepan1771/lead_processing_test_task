@@ -5,7 +5,11 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from core.models import Contact
-from core.schemas.contact import ContactCreate, ContactUpdate
+from core.schemas.contact import (
+    ContactCreate,
+    ContactUpdate,
+)
+
 from crud.base import BaseCRUD
 
 

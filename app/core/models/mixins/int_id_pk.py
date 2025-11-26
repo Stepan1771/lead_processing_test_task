@@ -1,5 +1,8 @@
 from sqlalchemy import Integer
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import (
+    Mapped,
+    mapped_column,
+)
 
 
 class IntIdPkMixin:

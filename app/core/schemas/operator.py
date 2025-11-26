@@ -1,6 +1,9 @@
 from typing import Dict
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+)
 
 
 class OperatorBase(BaseModel):

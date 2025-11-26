@@ -1,6 +1,6 @@
 import random
 
-from typing import List, Optional
+from typing import List
 
 from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -23,7 +23,7 @@ class DistributionService:
     async def find_best_operator(
             source_id: int,
             current_operators: List[Operator]
-    ) -> Optional[Operator]:
+    ) -> Operator | None:
         """
         Найти лучшего оператора для данного источника.
 
@@ -81,7 +81,7 @@ class DistributionService:
     async def distribute_contact(
             session: AsyncSession,
             contact: Contact
-    ) -> Optional[Operator]:
+    ) -> Operator | None:
         """
         Распределить обращение на оператора.
 
@@ -123,7 +123,9 @@ class DistributionService:
             raise e
 
     @staticmethod
-    async def distribute_all_undistributed(session: AsyncSession) -> List[dict]:
+    async def distribute_all_undistributed(
+            session: AsyncSession,
+    ) -> List[dict]:
         """
         Распределить все нераспределенные обращения.
 

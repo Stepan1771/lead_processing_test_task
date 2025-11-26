@@ -1,5 +1,12 @@
-from sqlalchemy import String, Boolean
-from sqlalchemy.orm import relationship, Mapped, mapped_column
+from sqlalchemy import (
+    String,
+    Boolean,
+)
+from sqlalchemy.orm import (
+    relationship,
+    Mapped,
+    mapped_column,
+)
 
 from core.models.mixins import IntIdPkMixin
 from core.models import Base
