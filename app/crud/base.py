@@ -63,6 +63,23 @@ class BaseCRUD(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
             raise e
 
 
+    async def create(
+            self,
+            session: AsyncSession,
+            create_schema: CreateSchemaType,
+    ) -> ModelType:
+        try:
+            create_data = create_schema.model_dump()
+            model_obj = self.model(**create_data)
+            session.add(model_obj)
+            await session.commit()
+            await session.refresh(model_obj)
+            return model_obj
+
+        except Exception as e:
+            raise e
+
+
     @staticmethod
     async def update(
             session: AsyncSession,
